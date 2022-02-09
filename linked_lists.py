@@ -4,48 +4,6 @@ class Node():
         self.next = None
 
 
-def make_list_from_tab(tab):
-    n = len(tab)
-    res = Node()
-    res.val = tab[0]
-    e = res
-    for i in range(1, n):
-        x = Node()
-        x.val = tab[i]
-        e.next = x
-        e = e.next
-
-    return res
-
-
-def merge_lists(a, b):
-    if a == None or b == None: return
-
-    if a.val > b.val:  # c - głowa wyniku, e - ostatni node wyniku
-        c = b
-        b = b.next
-    else:
-        c = a
-        a = a.next
-    e = c
-
-    while True:
-        if a == None:
-            e.next = b
-            return c
-        if b == None:
-            e.next = a
-            return c
-
-        if a.val < b.val:
-            e.next = a
-            e = e.next
-            a = a.next
-        else:
-            e.next = b
-            e = e.next
-            b = b.next
-
 def print_list(L):
     while L != None:
         print(L.val, end=" -> ")
@@ -131,4 +89,8 @@ def merge_sorted_lists_2(A, B): #zwraza wskaźnik na koniec i początek
     return C.next, end
 
 
-
+A = None
+for i in range(0, 10, 2):
+    x = Node()
+    x.val = i
+    A = add_to_sorted(A, x)

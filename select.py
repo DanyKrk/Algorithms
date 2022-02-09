@@ -52,4 +52,4 @@ def select(A,p,r,k):
 
 tab = [5,3,26,72,45,4,54,645,64]
 n = len(tab)
-print(select(tab,0,n-1,-1))
+print(select(tab,0,n-1,0))

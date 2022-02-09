@@ -29,6 +29,17 @@ def makeheap(tab, n):
            heapify(tab, n, i)
 
 
+def heapsort(tab):
+    n = len(tab)
+
+    makeheap(tab,n)
+
+    for i in range(n-1,-1,-1):
+        tab[0],tab[i] = tab[i], tab[0]
+        heapify(tab,i,0)
+
+
+
 def add_to_heap(tab,el):
     tab.append(el)
     n = len(tab)
@@ -44,17 +55,6 @@ def remove_and_return_top_from_heap(tab):
     tab[0], tab[n-1] = tab[n-1], tab[0]
     heapify(tab,n-1,0)
     return tab.pop()
-
-
-def heapsort(tab):
-    n = len(tab)
-
-    makeheap(tab,n)
-
-    for i in range(n-1,-1,-1):
-        tab[0],tab[i] = tab[i], tab[0]
-        heapify(tab,i,0)
-
 
 tab = [2,4,23,5,2,62,236,324,6,2363]
 n = len(tab)

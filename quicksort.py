@@ -76,7 +76,9 @@ def quicksort_iter(tab):  # quicksort bez rekurencji
             stack.append((q + 1, e))
 
 
-A = [5, 43, 23, 423, 4, 234, 23, 5]
+
+
+A = [5,43,23,423,4,234,23,5]
 print("przed sortowaniem: ", A)
 quicksort_iter(A)
 print("po sortowaniu: ", A)
